@@ -8,6 +8,7 @@ const ItemCounter = ({initialValue = 0, maxValue = 10, minValue = 0,onAdd}) => {
         if(counter>minValue)
         {
             setCounter(counter - 1);
+            onAdd(counter - 1);
         }
     }
 
@@ -15,11 +16,8 @@ const ItemCounter = ({initialValue = 0, maxValue = 10, minValue = 0,onAdd}) => {
         if(counter<maxValue)
         {
             setCounter(counter + 1);
+            onAdd(counter + 1);
         }
-    }
-
-    const addToCarrito = () => {
-        onAdd(counter);
     }
 
     return (
@@ -28,7 +26,6 @@ const ItemCounter = ({initialValue = 0, maxValue = 10, minValue = 0,onAdd}) => {
             <input type="text" className="text-center" value={counter} disabled="disabled" />
             <Button variant="danger" onClick={increment}>+</Button>
             <br/>
-            <Button variant="danger" alguin-item="center" onClick={addToCarrito}>AGREGAR AL CARRITO</Button>
         </div>
     )
 
