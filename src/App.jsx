@@ -5,10 +5,12 @@ import Home from './containers/Home/Home';
 import Cart from './components/Cart/Cart';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
+import { AppProvider } from './context/CartContext';
 
 function App() {
   return (
     <div>
+      <AppProvider>
       <BrowserRouter>
         <NavBar NavBar="Home" Catalog="Catalog" Bands="Bands" ContactUs="Contact Us"/>
          <Switch>
@@ -23,6 +25,7 @@ function App() {
             </Route>
           </Switch>
       </BrowserRouter>
+      </AppProvider>
       {/* {Footer} */}
     </div>
   );
