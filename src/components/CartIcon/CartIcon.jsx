@@ -2,7 +2,7 @@ import carrito from './CartIcon.png';
 import useCartContext from '../../context/CartContext';
 import { Link } from "react-router-dom";
 
-export const CartIcon = () => {
+const CartIcon = () => {
     const { productsCount } = useCartContext()
 
     return (
