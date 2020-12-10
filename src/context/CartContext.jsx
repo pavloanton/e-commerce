@@ -37,7 +37,7 @@ export const AppProvider = ({ children }) => {
     
     //suma total de los productos => importe total
     const getFinalTotal = () => {
-        return products.reduce((acc, p) => (acc += p.price * p.quantity), 0)
+        // return products.reduce((acc, p) => (acc += p.price * p.quantity), 0)
     }
 
     //Editar Carrito
