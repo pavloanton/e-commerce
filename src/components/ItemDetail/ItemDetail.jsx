@@ -19,8 +19,10 @@ const ItemDetail = ({product}) => {
     }
 
     const addProductToCart = () => {
+
         addProduct(product, quantity)
-        alert(`Agregado "${product.name}" al Carrito`)
+        alert(`Agregado " ${product.name} " al Carrito`)
+        
     }
         return (
             <div>
@@ -29,8 +31,8 @@ const ItemDetail = ({product}) => {
                 <h3>Price: ${product.price}</h3>
                 </div>
                 <ItemCounter onAdd={handleCounter}></ItemCounter>
-                <Button onClick={addProductToCart} variant="danger" alguin-item="center">AGREGAR AL CARRITO {quantity}</Button>
-            </div>
+                <Button onClick={addProductToCart} variant="danger" disabled={quantity==0 ? true : false} alguin-item="center">Add to Cart {quantity}</Button>
+            </div> 
         )
     }
 

@@ -36,8 +36,8 @@ export const AppProvider = ({ children }) => {
     }
     
     //suma total de los productos => importe total
-    const getGrandTotal = () => {
-
+    const getFinalTotal = () => {
+        return products.reduce((acc, p) => (acc += p.price * p.quantity), 0)
     }
 
     //Editar Carrito
@@ -46,7 +46,7 @@ export const AppProvider = ({ children }) => {
     //setProducts([])
 
 
-    return <CartContext.Provider value ={{ products, addProduct, productsCount, delProduct}}>
+    return <CartContext.Provider value ={{ products, addProduct, productsCount, delProduct, getFinalTotal}}>
         {children}
     </CartContext.Provider>
 }

@@ -25,7 +25,6 @@ const NavBar = () => {
       </NavDropdown>
       <Nav.Link href="#link">Contact Us</Nav.Link>
       <CartIcon></CartIcon>
-      {/* <Nav.Link href={`/Cart`}><img src={CartIcon.img1} width="25"></img></Nav.Link> */}
     </Nav>
     <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
