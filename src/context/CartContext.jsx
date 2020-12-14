@@ -1,10 +1,10 @@
 import { createContext, useContext, useState } from 'react'
-
+import { useEffect } from 'react';
 const CartContext = createContext()
 const useCartContext = () => useContext(CartContext)
 
 export const AppProvider = ({ children }) => {
-
+        
     const [products, setProducts ] = useState([])
 
     const addProduct = (product, quantity) => {

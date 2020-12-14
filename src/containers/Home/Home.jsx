@@ -5,9 +5,12 @@ import ItemList from "../../components/ItemList/ItemList";
 import { getProducts } from '../../lib/Products2';
 import Spinner from '../../components/Spinner/Spinner';
 import { Link, NavLink } from 'react-router-dom/cjs/react-router-dom.min';
+import { getFirestore } from '../../firebase';
+import '../../components/Logo/Logo.styles.scss'
 
 const Home = () => {
 
+   
    const [loading, setLoading] = useState(true);
    const [items, setItems] = useState([])
 
@@ -57,22 +60,49 @@ const Home = () => {
   
    return (
       <div className="text-center p-3 mb-2 bg-dark text-white">
-        <br></br>
-
-        <div>
-        {
-        loading ? <Spinner></Spinner> :
+         <br></br>
+         <h1 className='title'>Abyssal Merch</h1>
+         <br></br>
+         <br></br>
+         <div>
+         {
+         loading ? <Spinner></Spinner> :
          (
             <div>
              <ItemList item={items}></ItemList>
             </div>
          )
          }
-        </div>
-
-        <br></br>
+         </div>
       </div>
    )
 }
 
+   // ESTO ES FIREBASE
+   // const [productos, setProductos] = useState();
+
+   // useEffect(() => {
+
+   // const db = getFirestore();
+   // const itemCollection = db.collection('products');
+
+   // itemCollection.get().then((response) => {
+   //    const aux = response.docs.map(element => {
+   //       return element.data();
+   //    });
+   //    setProductos(aux)
+   // });
+
+   // }, []);
+
+   // return <>
+   //    <div className="text-center p-3 mb-2 bg-dark text-white">
+   //       {productos ?
+   //       productos.map(element => {
+   //          return <p>{element.name} + {element.price} + {element.description}</p>
+   //       }):'cargando'}
+   //    </div>
+   // </>
+
+   //}
 export default Home;

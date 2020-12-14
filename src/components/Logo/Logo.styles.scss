@@ -1,0 +1,14 @@
+.logo {
+    font-family: 'witch';
+}
+
+.title {
+    font-family: 'witch';
+    font-size: 100px;
+}
+
+
+@font-face {
+    font-family: 'witch';
+    src: local('witch'), url(../../fonts/burnthewitch.ttf) format('truetype');
+  }

@@ -11,8 +11,6 @@ const Cart = () => {
 
     console.log(products)
 
-    let FinalPrice = 0;
-
     const handleDel = (p) => {
         delProduct(p.id)
     }
@@ -38,14 +36,14 @@ const Cart = () => {
                         <tr>
                             <td>{product.name}</td>
                             <td>{product.quantity}</td>
-                            <td>{product.price}  {FinalPrice =+ product.quantity * product.price}</td>
+                            <td>{product.price}</td>
                             <td><Button2 callback={() => handleDel(product)} content={"X Remove"} ></Button2></td>
                         </tr>
                         ))
                     }
                         <tr>
                             <td colspan="3"><ButtonQL size={"sm"} content={"RETURN TO HOME"} path={"/"}></ButtonQL></td>
-                            <td>Cart Total: $ {FinalPrice}</td>
+                            <td>Cart Total: $ ????????</td>
                         </tr>
                     </tbody>
                 </Table>
