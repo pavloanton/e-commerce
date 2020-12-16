@@ -9,7 +9,7 @@ const app = firebase.initializeApp(
         storageBucket: "abyssal-ce8d1.appspot.com",
         messagingSenderId: "29637838597",
         appId: "1:29637838597:web:a0616aabbaca9d5bf0d96c"
-    }
+      }
 )
 
 export const getFirebase = () => {

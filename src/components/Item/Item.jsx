@@ -1,13 +1,11 @@
-import ButtonQL from '../Button/Button';
-
+import ButtonGlobal from '../Button/Button';
 
 const Item = ({item}) => {
 
     return (
         <div>
             <div>
-                <ButtonQL content={item.name} path={`/itemdetail/${item.id}`}></ButtonQL>
-            {/* <p key={item.id}>{item.name} {item.price}</p> */}
+                <ButtonGlobal content={`Quick Shop`} path={`/itemdetail/${item}`}></ButtonGlobal>
             </div>
         </div>
     )
