@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import useCartContext from "../../context/CartContext";
 import EmptyCart from "../EmptyCart/EmptyCart";
 import Table from 'react-bootstrap/Table';
 import Button2 from '../Button2/Button2';
-import ButtonQL from '../Button/Button'
+import ButtonGlobal from '../Button/Button'
+import { ItemsContext } from "../../context/ItemsProvider";
 
 const Cart = () => {
 
-    const { delProduct, products } = useCartContext()
+    const { delProduct, products } = useContext(ItemsContext)
 
     console.log(products)
 
@@ -34,7 +35,7 @@ const Cart = () => {
                     <tbody>
                     {products.map((product) => (
                         <tr>
-                            <td>{product.name}</td>
+                            <td>{product.title}</td>
                             <td>{product.quantity}</td>
                             <td>{product.price}</td>
                             <td><Button2 callback={() => handleDel(product)} content={"X Remove"} ></Button2></td>
@@ -42,7 +43,7 @@ const Cart = () => {
                         ))
                     }
                         <tr>
-                            <td colspan="3"><ButtonQL size={"sm"} content={"RETURN TO HOME"} path={"/"}></ButtonQL></td>
+                            <td colspan="3"><ButtonGlobal size={"sm"} content={"RETURN TO HOME"} path={"/"}></ButtonGlobal></td>
                             <td>Cart Total: $ ????????</td>
                         </tr>
                     </tbody>

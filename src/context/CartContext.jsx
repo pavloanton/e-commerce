@@ -7,17 +7,17 @@ export const AppProvider = ({ children }) => {
         
     const [products, setProducts ] = useState([])
 
-    const addProduct = (product, quantity) => {
+    const addProduct = (itemId, quantity) => {
         //buscar en array si existe
 
-        const existing = products.find((p) => p.id===product.id)
+        const existing = products.find((p) => p.id===itemId.id)
 
         if(existing) {
             existing.quantity += quantity
             setProducts([...products])
         }
         else {
-            setProducts([...products, { ...product, quantity}])
+            setProducts([...products, { ...itemId, quantity}])
         }
     }
 
