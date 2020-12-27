@@ -1,4 +1,5 @@
-## Proyecto Semestral Pablo Anton v.1.1
+## PROYECTO QUE INCLUYE TODOS LOS DESAFIOS DE TODAS LAS CLASES DE CODERHOUSE
+## LO USE PARA APRENDER
 
 # Getting Started with Create React App
 
